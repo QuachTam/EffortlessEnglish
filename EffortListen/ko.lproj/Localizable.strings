@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  EffortListen
+
+  Created by Tamqn on 3/30/16.
+  Copyright © 2016 Tamqn. All rights reserved.
+*/
+
+"LoggingIn" = "벌채 반출";
+"keyFolders" = "폴더";
+"keyLoading" = "로드";
+"keyServerError" = "서버 오류";
+"keyFiles" = "파일";
+"keyDownloading" = "다운로드...";
+"keyEffortListen" = "Effort Listen";
+"keyLoadFileError" = "로드 파일 오류";
+"keyReadBook" = "책을 읽다";
+"keySuggestBookPDF" = "책 PDF를 추천";
+"keySending" = "배상...";
+"keyThanksYourSendSuggest" = "감사합니다 당신이 제안 보내";
+"keyYourDeviceIsBlocked" = "기기가 차단됩니다";
+"keyAbout" = "약";
+"keyHereIsSomeMainTextInTheEmail" = "여기에 이메일의 일부 본문입니다!";
+"keySendEmailSuccess" = "이메일 성공 보내기";
+"keySendEmailFail" = "실패 이메일 보내기";
+"keyAboutUs" = "회사 소개";
+"keyName" = "이름";
+"keyType" = "유형";
+"keyLink" = "링크 다운로드 전자 책";
+"keyLinkStoreNoYet" = "The link hasn't been updated for share this app on appstore!. We will update as soon as possible, Please share later";
+"keySendEmailToMe" = "Send email";
+"keyName" = "Name";
+"keyType" = "Type";
+"keyLinkDownload" = "Link download";
+"keySuggest" = "Suggest";

@@ -1,2 +1,2 @@
-# EffortlessEnglish
-effort
+# EffortListen
+luyen nghe tieng anh.

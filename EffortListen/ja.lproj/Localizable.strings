@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  EffortListen
+
+  Created by Tamqn on 3/30/16.
+  Copyright © 2016 Tamqn. All rights reserved.
+*/
+
+"keyLoggingIn" = "ロギング";
+"keyFolders" = "フォルダ";
+"keyLoading" = "ローディング";
+"keyServerError" = "サーバーエラー";
+"keyFiles" = "ファイル";
+"keyDownloading" = "ダウンロード...";
+"keyEffortListen" = "Effort Listen";
+"keyLoadFileError" = "ロード・ファイルのエラー";
+"keyReadBook" = "本を読む";
+"keySuggestBookPDF" = "ブックPDFを提案します";
+"keySending" = "送信...";
+"keyThanksYourSendSuggest" = "おかげであなたが示唆送ります";
+"keyYourDeviceIsBlocked" = "お使いのデバイスがブロックされています";
+"keyAbout" = "約";
+"keyHereIsSomeMainTextInTheEmail" = "ここでは、電子メールでのいくつかの主要なテキストがあります！";
+"keySendEmailSuccess" = "電子メールの成功を送信";
+"keySendEmailFail" = "失敗メールを送信";
+"keyAboutUs" = "私たちに関しては";
+"keyName" = "名";
+"keyType" = "タイプ";
+"keyLink" = "リンクダウンロード電子ブック";
+"keyLinkStoreNoYet" = "The link hasn't been updated for share this app on appstore!. We will update as soon as possible, Please share later";
+"keySendEmailToMe" = "Send email";
+"keyName" = "Name";
+"keyType" = "Type";
+"keyLinkDownload" = "Link download";
+"keySuggest" = "Suggest";

@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  EffortListen
+
+  Created by Tamqn on 3/30/16.
+  Copyright © 2016 Tamqn. All rights reserved.
+*/
+"keyLoggingIn" = "Logging in";
+"keyFolders" = "Folders";
+"keyLoading" = "Loading";
+"keyServerError" = "Server Error";
+"keyFiles" = "Files";
+"keyDownloading" = "Downloading...";
+"keyEffortListen" = "Effort Listen";
+"keyLoadFileError" = "Load file error";
+"keyReadBook" = "Read Book";
+"keySuggestBookPDF" = "Suggest Book PDF";
+"keySending" = "Sending...";
+"keyThanksYourSendSuggest" = "Thanks your send suggest";
+"keyYourDeviceIsBlocked" = "Your device is blocked";
+"keyAbout" = "About";
+"keyHereIsSomeMainTextInTheEmail" = "Here is some main text in the email!";
+"keySendEmailSuccess" = "Send email success";
+"keySendEmailFail" = "Send email fail";
+"keyAboutUs" = "About Us";
+"keyName" = "Name";
+"keyType" = "Type";
+"keyLink" = "Link download book";
+"keyLinkStoreNoYet" = "The link hasn't been updated for share this app on appstore!. We will update as soon as possible, Please share later";
+"keySendEmailToMe" = "Send email";
+"keyName" = "Name";
+"keyType" = "Type";
+"keyLinkDownload" = "Link download";
+"keySuggest" = "Suggest";

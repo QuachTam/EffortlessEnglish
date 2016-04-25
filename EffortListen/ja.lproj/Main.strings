@@ -1,0 +1,30 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "0Ts-oa-R6X"; */
+"0Ts-oa-R6X.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "3hR-Ma-cO2"; */
+"3hR-Ma-cO2.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "C9O-KP-n1q"; */
+"C9O-KP-n1q.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Eqy-4n-Xbf"; */
+"Eqy-4n-Xbf.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "JfW-KD-Bun"; */
+"JfW-KD-Bun.placeholder" = "Name";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "O9L-Bh-fJZ"; */
+"O9L-Bh-fJZ.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Link download book"; ObjectID = "RC5-qo-uZw"; */
+"RC5-qo-uZw.placeholder" = "Link download book";
+
+/* Class = "UIButton"; normalTitle = "Send email to me"; ObjectID = "X8K-uN-lYy"; */
+"X8K-uN-lYy.normalTitle" = "Send email to me";
+
+/* Class = "UITextField"; placeholder = "Type (Example: cook, comic,...)"; ObjectID = "a1G-oF-jqx"; */
+"a1G-oF-jqx.placeholder" = "Type (Example: cook, comic,...)";
+
+/* Class = "UIButton"; normalTitle = "Suggest"; ObjectID = "qVc-Jg-Ygm"; */
+"qVc-Jg-Ygm.normalTitle" = "Suggest";
