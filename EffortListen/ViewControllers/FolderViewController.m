@@ -89,29 +89,17 @@
 }
 
 - (void)likeFaceBook {
-    NSData *data = [QMServicesManager.instance.currentUser.customData dataUsingEncoding:NSUTF8StringEncoding];
-    NSDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:data
-                                                                 options:kNilOptions
-                                                                   error:nil];
-    if (jsonResponse) {
-        NSString *linkStore = [jsonResponse valueForKey:@"linkAppstore"];
-        if (linkStore.length) {
-            FBSDKLoginManager *loginmanager= [[FBSDKLoginManager alloc]init];
-            [loginmanager logOut];
-            FaceBookServicesManager *faceManager = [FaceBookServicesManager sharedInstance];
-            [faceManager loginFaceBookWithPermission:@[@"public_profile", @"email", @"user_friends"] success:^(FaceBookInformation *faceInfo) {
-                [faceManager shareLink:[jsonResponse valueForKey:@"linkAppstore"] inViewController:self];
-            } fail:^(NSError *error) {
-                NSLog(@"fail");
-            } cancel:^{
-                NSLog(@"cancel");
-            }];
-        }else{
-            [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"keyLinkStoreNoYet", nil)];
-        }
-    }else {
-        [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"keyLinkStoreNoYet", nil)];
-    }
+    Configure *setup = [Configure instance];
+    FBSDKLoginManager *loginmanager= [[FBSDKLoginManager alloc]init];
+    [loginmanager logOut];
+    FaceBookServicesManager *faceManager = [FaceBookServicesManager sharedInstance];
+    [faceManager loginFaceBookWithPermission:@[@"public_profile", @"email", @"user_friends"] success:^(FaceBookInformation *faceInfo) {
+        [faceManager shareLink:setup.linkStore inViewController:self];
+    } fail:^(NSError *error) {
+        NSLog(@"fail");
+    } cancel:^{
+        NSLog(@"cancel");
+    }];    
 }
 
 - (void)paginator:(id)paginator didReceiveResults:(NSArray *)results {

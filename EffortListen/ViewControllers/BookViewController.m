@@ -45,8 +45,6 @@ NSInteger TYPE_DATA_PDF = 1;
     [adManager showAdmodInViewController];
     [self footerView];
     
-    TrackerManager *managerManager = [TrackerManager instance];
-    [managerManager trackerScreenViewWithName:@"BookViewController"];
 }
 
 - (void)footerView {

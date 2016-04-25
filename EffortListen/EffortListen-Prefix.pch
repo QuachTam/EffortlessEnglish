@@ -23,5 +23,6 @@
     #import "CommonFeature.h"
     #import "AdmodManager.h"
     #import <SwipeBack/SwipeBack.h>
-    #import "TrackerManager.h"
+    #import "Configure.h"
+
 #endif

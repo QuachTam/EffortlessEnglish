@@ -8,9 +8,6 @@
 
 #import "AppDelegate.h"
 #import "FaceBookServicesManager.h"
-#import "GAITracker.h"
-#import "GAI.h"
-#import "GAIFields.h"
 
 const NSUInteger kApplicationID = 37770;
 NSString *const kAuthKey        = @"yk27Lrh3MGYkXWG";
@@ -41,24 +38,6 @@ NSString *const kAccountKey     = @"dNmL8ohoACNrhHZ6KWAQ";
     [QBSettings enableXMPPLogging];
     
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
-    
-    /********** Testing **********/
-    //  [[GAI sharedInstance] setDryRun:YES];
-    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
-    /* send uncaught exceptions to Google Analytics. */
-    [GAI sharedInstance].trackUncaughtExceptions = YES;
-    
-    /********** Sampling Rate 20 seconds. **********/
-    [GAI sharedInstance].dispatchInterval = 20;
-    
-    
-    /* Initialize tracker */
-    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-75154369-1"];
-    
-    /********** Sampling Rate **********/
-    NSString *version = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
-    [tracker set:kGAIAppVersion value:version];
-    [tracker set:kGAISampleRate value:@"50.0"]; // sampling rate of 50%
     
     [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:NULL];
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];

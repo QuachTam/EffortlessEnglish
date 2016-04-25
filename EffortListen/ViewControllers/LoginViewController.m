@@ -26,26 +26,25 @@
     [QMServicesManager.instance logInWithUser:currentUser completion:^(BOOL success, NSString *errorMessage) {
         if (success) {
             __typeof(self) strongSelf = weakSelf;
-            [SVProgressHUD dismiss];
-            [strongSelf performSegueWithIdentifier:@"loginSegue" sender:nil];
+            [QBRequest objectsWithClassName:@"Configure" successBlock:^(QBResponse * _Nonnull response, NSArray * _Nullable objects) {
+                QBCOCustomObject *object_custom = [objects firstObject];
+                NSString *linkStore = object_custom.fields[@"appleLink"];
+                NSString *clientAppID = object_custom.fields[@"clientAppID"];
+                
+                Configure *setup = [Configure instance];
+                setup.linkStore = linkStore;
+                setup.clientAppID = clientAppID;
+                
+                [SVProgressHUD dismiss];
+                [strongSelf performSegueWithIdentifier:@"loginSegue" sender:nil];
+            } errorBlock:^(QBResponse * _Nonnull response) {
+                [SVProgressHUD dismiss];
+                [strongSelf performSegueWithIdentifier:@"loginSegue" sender:nil];
+            }];
         } else {
             [SVProgressHUD showErrorWithStatus:@"Error"];
         }
         
-        QBUpdateUserParameters *updateParameters = [QBUpdateUserParameters new];
-        updateParameters.website = @"www.mysite.com";
-        updateParameters.phone = @"0974662046";
-        NSDictionary *contentDictionary = @{@"linkAppstore":@""};
-        NSData *data = [NSJSONSerialization dataWithJSONObject:contentDictionary options:NSJSONWritingPrettyPrinted error:nil];
-        NSString *jsonStr = [[NSString alloc] initWithData:data
-                                                  encoding:NSUTF8StringEncoding];
-        updateParameters.customData = jsonStr;
-        
-        [QBRequest updateCurrentUser:updateParameters successBlock:^(QBResponse *response, QBUUser *user) {
-            NSLog(@"sdfsdf");
-        } errorBlock:^(QBResponse *response) {
-            NSLog(@"ssssss");
-        }];
     }];
 }
 

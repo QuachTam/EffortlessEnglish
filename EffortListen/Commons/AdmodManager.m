@@ -50,13 +50,15 @@ const NSInteger showAdBottom = 1;
 }
 
 - (void)showAdmod:(NSInteger)type inViewController:(UIViewController *)parent{
+    Configure *setup = [Configure instance];
+    
     UIView *viewBannerAdMod = [[UIView alloc] initForAutoLayout];
     GADBannerView *bannerView_ = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
-    bannerView_.adUnitID = ClientAppID;
+    bannerView_.adUnitID = setup.clientAppID;
     bannerView_.rootViewController = parent;
     bannerView_.autoloadEnabled = YES;
     GADRequest *request = [GADRequest request];
-//    request.testDevices = [NSArray arrayWithObjects:@"Simulator",nil];
+    request.testDevices = [NSArray arrayWithObjects:@"Simulator",nil];
     [bannerView_ loadRequest:request];
     [viewBannerAdMod addSubview:bannerView_];
     if (type==showAdTop) {
@@ -99,10 +101,11 @@ const NSInteger showAdBottom = 1;
 
 #pragma mark createAndLoadInterstitial
 - (void)createAndLoadInterstitial {
-    self.interstitial = [[DFPInterstitial alloc] initWithAdUnitID:ClientAppID];
+    Configure *setup = [Configure instance];
+    self.interstitial = [[DFPInterstitial alloc] initWithAdUnitID:setup.clientAppID];
     self.interstitial.delegate = self;
     GADRequest *request = [GADRequest request];
-//    request.testDevices = [NSArray arrayWithObjects:@"Simulator",nil];
+    request.testDevices = [NSArray arrayWithObjects:@"Simulator",nil];
     [self.interstitial loadRequest:request];
 }
 
