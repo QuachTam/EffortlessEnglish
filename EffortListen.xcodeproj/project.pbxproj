@@ -57,6 +57,9 @@
 		FB410F3A1CCF8DE400C8EC9B /* FolderEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = FB410F301CCF8DE400C8EC9B /* FolderEntity.m */; };
 		FB410F3B1CCF8DE400C8EC9B /* ItemEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FB410F321CCF8DE400C8EC9B /* ItemEntity+CoreDataProperties.m */; };
 		FB410F3C1CCF8DE400C8EC9B /* ItemEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = FB410F341CCF8DE400C8EC9B /* ItemEntity.m */; };
+		FB4227AC1CD33EAC00D534E9 /* StartAppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4227AB1CD33EAC00D534E9 /* StartAppManager.m */; };
+		FB4227AE1CD3462400D534E9 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4227AD1CD3462400D534E9 /* CoreMedia.framework */; };
+		FB4227B01CD3463000D534E9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4227AF1CD3463000D534E9 /* AVFoundation.framework */; };
 		FB4410DE1CAA36AE00176306 /* CustomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4410DB1CAA36AE00176306 /* CustomAnimationController.m */; };
 		FB4410DF1CAA36AE00176306 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4410DD1CAA36AE00176306 /* SWRevealViewController.m */; };
 		FB4410E21CAA392D00176306 /* menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB4410E01CAA392D00176306 /* menu@3x.png */; };
@@ -233,6 +236,10 @@
 		FB410F321CCF8DE400C8EC9B /* ItemEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ItemEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
 		FB410F331CCF8DE400C8EC9B /* ItemEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemEntity.h; sourceTree = "<group>"; };
 		FB410F341CCF8DE400C8EC9B /* ItemEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemEntity.m; sourceTree = "<group>"; };
+		FB4227AA1CD33EAC00D534E9 /* StartAppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartAppManager.h; sourceTree = "<group>"; };
+		FB4227AB1CD33EAC00D534E9 /* StartAppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartAppManager.m; sourceTree = "<group>"; };
+		FB4227AD1CD3462400D534E9 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		FB4227AF1CD3463000D534E9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FB4410DA1CAA36AE00176306 /* CustomAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnimationController.h; sourceTree = "<group>"; };
 		FB4410DB1CAA36AE00176306 /* CustomAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnimationController.m; sourceTree = "<group>"; };
 		FB4410DC1CAA36AE00176306 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -383,6 +390,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB4227B01CD3463000D534E9 /* AVFoundation.framework in Frameworks */,
+				FB4227AE1CD3462400D534E9 /* CoreMedia.framework in Frameworks */,
+				FB08B5381CAA88AD005466D9 /* AdSupport.framework in Frameworks */,
 				FB410EE41CCF068000C8EC9B /* StartApp.framework in Frameworks */,
 				FB410EDB1CCEFDAC00C8EC9B /* CoreTelephony.framework in Frameworks */,
 				FB410ED91CCEFD9D00C8EC9B /* StoreKit.framework in Frameworks */,
@@ -391,7 +401,6 @@
 				FB29BF481CB62DD60032CF0D /* CoreData.framework in Frameworks */,
 				FB4B34441CB5300700204794 /* libsqlite3.0.tbd in Frameworks */,
 				FB9E9C251CA3C79A0007ACDA /* MessageUI.framework in Frameworks */,
-				FB08B5381CAA88AD005466D9 /* AdSupport.framework in Frameworks */,
 				FB08B5321CAA854B005466D9 /* FacebookSDKStrings.bundle in Frameworks */,
 				FB08B5331CAA854B005466D9 /* FBAudienceNetwork.framework in Frameworks */,
 				FB08B5341CAA854B005466D9 /* FBSDKCoreKit.framework in Frameworks */,
@@ -419,6 +428,8 @@
 		7D21BDC39208A46497D56363 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FB4227AF1CD3463000D534E9 /* AVFoundation.framework */,
+				FB4227AD1CD3462400D534E9 /* CoreMedia.framework */,
 				FB410EDA1CCEFDAC00C8EC9B /* CoreTelephony.framework */,
 				FB410ED81CCEFD9D00C8EC9B /* StoreKit.framework */,
 				FB29BF4B1CB62DE90032CF0D /* libz.tbd */,
@@ -469,8 +480,7 @@
 		FB30368B1CA14AE300186849 = {
 			isa = PBXGroup;
 			children = (
-				FB410EE01CCF064600C8EC9B /* StartApp.bundle */,
-				FB410EE11CCF064600C8EC9B /* StartApp.framework */,
+				FB4227A91CD33D5400D534E9 /* StartApp */,
 				FB9E9C281CA3C7F30007ACDA /* Reader */,
 				FB3036961CA14AE300186849 /* EffortListen */,
 				FB3036951CA14AE300186849 /* Products */,
@@ -573,6 +583,15 @@
 				FB410F341CCF8DE400C8EC9B /* ItemEntity.m */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		FB4227A91CD33D5400D534E9 /* StartApp */ = {
+			isa = PBXGroup;
+			children = (
+				FB410EE01CCF064600C8EC9B /* StartApp.bundle */,
+				FB410EE11CCF064600C8EC9B /* StartApp.framework */,
+			);
+			name = StartApp;
 			sourceTree = "<group>";
 		};
 		FB4410D91CAA36AE00176306 /* SWRevealViewController */ = {
@@ -750,6 +769,8 @@
 				FBFC2FA51CA4F5790043F354 /* TQNDocument.m */,
 				FB93904C1CA90D4000C76B04 /* AdmodManager.h */,
 				FB93904D1CA90D4000C76B04 /* AdmodManager.m */,
+				FB4227AA1CD33EAC00D534E9 /* StartAppManager.h */,
+				FB4227AB1CD33EAC00D534E9 /* StartAppManager.m */,
 				FB08B5281CAA829D005466D9 /* FaceBookServicesManager.h */,
 				FB08B5291CAA829D005466D9 /* FaceBookServicesManager.m */,
 				A5850D301CBE36C200299046 /* Configure.h */,
@@ -973,6 +994,7 @@
 				FB9E9CAE1CA3C7F30007ACDA /* ReaderMainToolbar.m in Sources */,
 				FB9E9CB81CA3C7F30007ACDA /* ThumbsViewController.m in Sources */,
 				FB410F3C1CCF8DE400C8EC9B /* ItemEntity.m in Sources */,
+				FB4227AC1CD33EAC00D534E9 /* StartAppManager.m in Sources */,
 				FB6763F91CA2868800344306 /* BookService.m in Sources */,
 				FB9E9CA81CA3C7F30007ACDA /* ReaderContentPage.m in Sources */,
 				FB9E9CA71CA3C7F30007ACDA /* ReaderConstants.m in Sources */,
@@ -1163,6 +1185,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1200,6 +1223,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <StartApp/StartApp.h>
 
-@interface LoginViewController : UIViewController<STADelegateProtocol>
+@interface LoginViewController : UIViewController
 
 @end

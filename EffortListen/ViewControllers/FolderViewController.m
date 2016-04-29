@@ -13,10 +13,15 @@
 #import "FolderTableViewCell.h"
 #import "BookViewController.h"
 #import "FaceBookServicesManager.h"
+#import "FolderEntity.h"
 
-@interface FolderViewController ()<NMPaginatorDelegate>
+
+@interface FolderViewController ()<NMPaginatorDelegate, NSFetchedResultsControllerDelegate>
 @property (nonatomic, strong) ObjectsPaginator *paginator;
 @property (nonatomic, readwrite) BOOL isFetchData;
+
+@property (nonatomic,strong) NSManagedObjectContext* managedObjectContext;
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @end
 
 @implementation FolderViewController
@@ -40,7 +45,47 @@
     
     self.isFetchData = YES;
     [self footerView];
+    
+    NSError *error;
+    if (![[self fetchedResultsController] performFetch:&error]) {
+        // Update to handle the error appropriately.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        exit(-1);  // Fail
+    }
 }
+
+- (void)viewDidUnload {
+    self.fetchedResultsController = nil;
+}
+
+- (NSFetchedResultsController *)fetchedResultsController {
+    
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"FolderEntity" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc]
+                              initWithKey:@"name" ascending:NO];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
+    
+    [fetchRequest setFetchBatchSize:20];
+    
+    NSFetchedResultsController *theFetchedResultsController =
+    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                        managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil
+                                                   cacheName:@"Root"];
+    self.fetchedResultsController = theFetchedResultsController;
+    _fetchedResultsController.delegate = self;
+    
+    return _fetchedResultsController;
+    
+}
+
 
 - (void)footerView {
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 67)];
@@ -140,7 +185,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[Storage instance].folderList count];
+    id  sectionInfo = [[_fetchedResultsController sections] objectAtIndex:section];
+    return [sectionInfo numberOfObjects];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -149,21 +195,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FolderTableViewCell *cell = (FolderTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"FolderTableViewCell"];
-    [self configureformTableViewCell:cell atIndexPath:indexPath tableView:tableView];
+    [self configureformTableViewCell:cell atIndexPath:indexPath];
     return cell;
 }
 
-- (void)configureformTableViewCell:(FolderTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView*)tableView{
+- (void)configureformTableViewCell:(FolderTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath{
     // some code for initializing cell content
-    QBCOCustomObject *object_custom = [Storage instance].folderList[indexPath.row];
-    cell.name.text = object_custom.fields[@"name"];
-    cell.numberBook.text = [NSString stringWithFormat:@"%ld", (long)[object_custom.fields[@"itemID"] count]];
+    FolderEntity *info = [_fetchedResultsController objectAtIndexPath:indexPath];
+    cell.name.text = info.name;
+    cell.numberBook.text = [NSString stringWithFormat:@"%d", [[info.itemEntity allObjects] count]];
+//    QBCOCustomObject *object_custom = [Storage instance].folderList[indexPath.row];
+//    cell.name.text = object_custom.fields[@"name"];
+//    cell.numberBook.text = [NSString stringWithFormat:@"%ld", (long)[object_custom.fields[@"itemID"] count]];
 }
 
 #pragma mark - Table view delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    QBCOCustomObject *object_custom = [Storage instance].folderList[indexPath.row];
-    [self performSegueWithIdentifier:@"bookSegue" sender:object_custom];
+//    QBCOCustomObject *object_custom = [Storage instance].folderList[indexPath.row];
+//    [self performSegueWithIdentifier:@"bookSegue" sender:object_custom];
 }
 
 - (CGFloat)heightForBasicCellAtIndexPaths:(NSIndexPath *)indexPath tableView:(UITableView*)tableView{
@@ -173,7 +222,7 @@
         sizingCell = [tableView dequeueReusableCellWithIdentifier:@"FolderTableViewCell"];
     });
     
-    [self configureformTableViewCell:sizingCell atIndexPath:indexPath tableView:tableView];
+    [self configureformTableViewCell:sizingCell atIndexPath:indexPath];
     return [self calculateHeightForConfiguredSizingCells:sizingCell];
 }
 
@@ -200,14 +249,52 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+    
+    UITableView *tableView = self.tbView;
+    
+    switch(type) {
+            
+        case NSFetchedResultsChangeInsert:
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeUpdate:
+            [self configureformTableViewCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            break;
+            
+        case NSFetchedResultsChangeMove:
+            [tableView deleteRowsAtIndexPaths:[NSArray
+                                               arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [tableView insertRowsAtIndexPaths:[NSArray
+                                               arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
 }
-*/
+
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id )sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+    
+    switch(type) {
+            
+        case NSFetchedResultsChangeInsert:
+            [self.tbView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [self.tbView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    // The fetch controller has sent all current change notifications, so tell the table view to process all updates.
+    [self.tbView endUpdates];
+}
 
 @end

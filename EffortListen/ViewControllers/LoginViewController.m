@@ -7,26 +7,10 @@
 //
 
 #import "LoginViewController.h"
+#import "StartAppManager.h"
 
 @interface LoginViewController (){
-    STAStartAppAd *startAppAd_autoLoad;
-    
-    /*
-     Declaration of STAStartAppAd which later on will be used
-     for loading when user clicks on a button and showing the
-     loaded ad when the ad was loaded with delegation
-     */
-    STAStartAppAd *startAppAd_loadShow;
-    
-    /*
-     Declaration of StartApp Banner view with automatic positioning
-     */
-    STABannerView *startAppBanner_auto;
-    
-    /*
-     Declaration of StartApp Banner view with fixed positioning and size
-     */
-    STABannerView *startAppBanner_fixed;
+   
 }
 
 @end
@@ -35,109 +19,38 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    if ([self isNetworkAvailable]) {
-//        QBUUser *currentUser = [QBUUser new];
-//        currentUser.email = @"mr.tamqn87hb@gmail.com";
-//        currentUser.password = @"Quachtam87";
-//        [SVProgressHUD showWithStatus:NSLocalizedString(@"keyLoggingIn", nil)];
-//        __weak __typeof(self)weakSelf = self;
-//        [QMServicesManager.instance logInWithUser:currentUser completion:^(BOOL success, NSString *errorMessage) {
-//            if (success) {
-//                [SVProgressHUD dismiss];
-//                [weakSelf performSegueWithIdentifier:@"loginSegue" sender:nil];
-//            } else {
-//                [SVProgressHUD showErrorWithStatus:@"Error"];
-//            }
-//            
-//        }];
-//    }
-    startAppAd_autoLoad = [[STAStartAppAd alloc] init];
-    startAppAd_loadShow = [[STAStartAppAd alloc] init];
+}
+
+- (void)gotoApp {
+    if ([self isNetworkAvailable]) {
+        QBUUser *currentUser = [QBUUser new];
+        currentUser.email = @"mr.tamqn87hb@gmail.com";
+        currentUser.password = @"Quachtam87";
+        [SVProgressHUD showWithStatus:NSLocalizedString(@"keyLoggingIn", nil)];
+        __weak __typeof(self)weakSelf = self;
+        [QMServicesManager.instance logInWithUser:currentUser completion:^(BOOL success, NSString *errorMessage) {
+            if (success) {
+                [SVProgressHUD dismiss];
+                [weakSelf performSegueWithIdentifier:@"loginSegue" sender:nil];
+            } else {
+                [SVProgressHUD showErrorWithStatus:@"Error"];
+            }
+            
+        }];
+    }
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+   StartAppManager *startappManager = [StartAppManager instance];
+    [startappManager clickShowLoad];
 }
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    //
-    // loading the StartApp Ad
-    [startAppAd_autoLoad loadAdWithDelegate:self];
-    
-    /*
-     load the StartApp auto position banner, banner size will be assigned automatically by  StartApp
-     NOTE: replace the ApplicationID and the PublisherID with your own IDs
-     */
-    if (startAppBanner_auto == nil) {
-        startAppBanner_auto = [[STABannerView alloc] initWithSize:STA_AutoAdSize
-                                                       autoOrigin:STAAdOrigin_Bottom
-                                                         withView:self.view withDelegate:nil];
-        [self.view addSubview:startAppBanner_auto];
-    }
-    
-    /*
-     load the StartApp fixed position banner - in (0, 200)
-     NOTE: replace the ApplicationID and the PublisherID with your own IDs
-     */
-    if (startAppBanner_fixed == nil) {
-        if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
-        {
-            startAppBanner_fixed = [[STABannerView alloc] initWithSize:STA_PortraitAdSize_768x90
-                                                                origin:CGPointMake(0,300)
-                                                              withView:self.view withDelegate:nil];
-        } else {
-            startAppBanner_fixed = [[STABannerView alloc] initWithSize:STA_PortraitAdSize_320x50
-                                                                origin:CGPointMake(0,200)
-                                                              withView:self.view withDelegate:nil];
-        }
-        
-        [self.view addSubview:startAppBanner_fixed];
-    }
-}
-
-
-#pragma mark STADelegateProtocol methods
-/*
- Implementation of the STADelegationProtocol.
- All methods here are optional and you can
- implement only the ones you need.
- */
-
-// StartApp Ad loaded successfully
-- (void) didLoadAd:(STAAbstractAd*)ad;
-{
-    NSLog(@"StartApp Ad had been loaded successfully");
-    
-    // Show the Ad
-    if (startAppAd_loadShow == ad) {
-        [startAppAd_loadShow showAd];
-    }
-}
-
-// StartApp Ad failed to load
-- (void) failedLoadAd:(STAAbstractAd*)ad withError:(NSError *)error;
-{
-    NSLog(@"StartApp Ad had failed to load");
-}
-
-// StartApp Ad is being displayed
-- (void) didShowAd:(STAAbstractAd*)ad;
-{
-    NSLog(@"StartApp Ad is being displayed");
-}
-
-// StartApp Ad failed to display
-- (void) failedShowAd:(STAAbstractAd*)ad withError:(NSError *)error;
-{
-    
-    NSLog(@"StartApp Ad is failed to display");
-    if (startAppAd_autoLoad == ad) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Can't show ad" message:@"Ad is not loaded yet, please try again" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alertView show];
-    }
-}
-
-- (void) didCloseAd:(STAAbstractAd*)ad {
-    if (startAppAd_autoLoad == ad) {
-        [startAppAd_autoLoad loadAdWithDelegate:self];
-    }
+    StartAppManager *startappManager = [StartAppManager instance];
+    [startappManager startAppAd_autoLoad];
+    [startappManager startAppBanner_auto:self];
+    [self performSelector:@selector(gotoApp) withObject:nil afterDelay:2.0];
 }
 
 - (BOOL)isNetworkAvailable {
