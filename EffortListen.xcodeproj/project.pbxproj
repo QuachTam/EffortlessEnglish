@@ -45,6 +45,18 @@
 		FB3036D01CA1673800186849 /* CustomFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3036CB1CA1673800186849 /* CustomFooter.m */; };
 		FB3036D11CA1673800186849 /* CustomHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3036CD1CA1673800186849 /* CustomHeader.m */; };
 		FB3036D41CA1677F00186849 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3036D31CA1677F00186849 /* Common.m */; };
+		FB410ED91CCEFD9D00C8EC9B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB410ED81CCEFD9D00C8EC9B /* StoreKit.framework */; };
+		FB410EDB1CCEFDAC00C8EC9B /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB410EDA1CCEFDAC00C8EC9B /* CoreTelephony.framework */; };
+		FB410EE21CCF064600C8EC9B /* StartApp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FB410EE01CCF064600C8EC9B /* StartApp.bundle */; };
+		FB410EE41CCF068000C8EC9B /* StartApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB410EE11CCF064600C8EC9B /* StartApp.framework */; };
+		FB410F351CCF8DE400C8EC9B /* BookEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FB410F261CCF8DE400C8EC9B /* BookEntity+CoreDataProperties.m */; };
+		FB410F361CCF8DE400C8EC9B /* BookEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = FB410F281CCF8DE400C8EC9B /* BookEntity.m */; };
+		FB410F371CCF8DE400C8EC9B /* ContentEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FB410F2A1CCF8DE400C8EC9B /* ContentEntity+CoreDataProperties.m */; };
+		FB410F381CCF8DE400C8EC9B /* ContentEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = FB410F2C1CCF8DE400C8EC9B /* ContentEntity.m */; };
+		FB410F391CCF8DE400C8EC9B /* FolderEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FB410F2E1CCF8DE400C8EC9B /* FolderEntity+CoreDataProperties.m */; };
+		FB410F3A1CCF8DE400C8EC9B /* FolderEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = FB410F301CCF8DE400C8EC9B /* FolderEntity.m */; };
+		FB410F3B1CCF8DE400C8EC9B /* ItemEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FB410F321CCF8DE400C8EC9B /* ItemEntity+CoreDataProperties.m */; };
+		FB410F3C1CCF8DE400C8EC9B /* ItemEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = FB410F341CCF8DE400C8EC9B /* ItemEntity.m */; };
 		FB4410DE1CAA36AE00176306 /* CustomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4410DB1CAA36AE00176306 /* CustomAnimationController.m */; };
 		FB4410DF1CAA36AE00176306 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4410DD1CAA36AE00176306 /* SWRevealViewController.m */; };
 		FB4410E21CAA392D00176306 /* menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB4410E01CAA392D00176306 /* menu@3x.png */; };
@@ -201,6 +213,26 @@
 		FB3036CD1CA1673800186849 /* CustomHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHeader.m; sourceTree = "<group>"; };
 		FB3036D21CA1677F00186849 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		FB3036D31CA1677F00186849 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		FB410ED81CCEFD9D00C8EC9B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		FB410EDA1CCEFDAC00C8EC9B /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		FB410EE01CCF064600C8EC9B /* StartApp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = StartApp.bundle; sourceTree = "<group>"; };
+		FB410EE11CCF064600C8EC9B /* StartApp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StartApp.framework; sourceTree = "<group>"; };
+		FB410F251CCF8DE400C8EC9B /* BookEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BookEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		FB410F261CCF8DE400C8EC9B /* BookEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BookEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		FB410F271CCF8DE400C8EC9B /* BookEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookEntity.h; sourceTree = "<group>"; };
+		FB410F281CCF8DE400C8EC9B /* BookEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookEntity.m; sourceTree = "<group>"; };
+		FB410F291CCF8DE400C8EC9B /* ContentEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ContentEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		FB410F2A1CCF8DE400C8EC9B /* ContentEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ContentEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		FB410F2B1CCF8DE400C8EC9B /* ContentEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentEntity.h; sourceTree = "<group>"; };
+		FB410F2C1CCF8DE400C8EC9B /* ContentEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentEntity.m; sourceTree = "<group>"; };
+		FB410F2D1CCF8DE400C8EC9B /* FolderEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FolderEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		FB410F2E1CCF8DE400C8EC9B /* FolderEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FolderEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		FB410F2F1CCF8DE400C8EC9B /* FolderEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolderEntity.h; sourceTree = "<group>"; };
+		FB410F301CCF8DE400C8EC9B /* FolderEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolderEntity.m; sourceTree = "<group>"; };
+		FB410F311CCF8DE400C8EC9B /* ItemEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ItemEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		FB410F321CCF8DE400C8EC9B /* ItemEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ItemEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		FB410F331CCF8DE400C8EC9B /* ItemEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemEntity.h; sourceTree = "<group>"; };
+		FB410F341CCF8DE400C8EC9B /* ItemEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemEntity.m; sourceTree = "<group>"; };
 		FB4410DA1CAA36AE00176306 /* CustomAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnimationController.h; sourceTree = "<group>"; };
 		FB4410DB1CAA36AE00176306 /* CustomAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnimationController.m; sourceTree = "<group>"; };
 		FB4410DC1CAA36AE00176306 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -213,7 +245,6 @@
 		FB4410EC1CAA3F5A00176306 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		FB4410EE1CAA423500176306 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		FB4410EF1CAA423500176306 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
-		FB4B34411CB52F7200204794 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalyticsServices.a; path = "Google Analytics/libGoogleAnalyticsServices.a"; sourceTree = "<group>"; };
 		FB4B34431CB5300700204794 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		FB6763F01CA24EC700344306 /* BookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookViewController.h; sourceTree = "<group>"; };
 		FB6763F11CA24EC700344306 /* BookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
@@ -352,6 +383,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB410EE41CCF068000C8EC9B /* StartApp.framework in Frameworks */,
+				FB410EDB1CCEFDAC00C8EC9B /* CoreTelephony.framework in Frameworks */,
+				FB410ED91CCEFD9D00C8EC9B /* StoreKit.framework in Frameworks */,
 				FB29BF4C1CB62DE90032CF0D /* libz.tbd in Frameworks */,
 				FB29BF4A1CB62DDD0032CF0D /* SystemConfiguration.framework in Frameworks */,
 				FB29BF481CB62DD60032CF0D /* CoreData.framework in Frameworks */,
@@ -385,11 +419,12 @@
 		7D21BDC39208A46497D56363 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FB410EDA1CCEFDAC00C8EC9B /* CoreTelephony.framework */,
+				FB410ED81CCEFD9D00C8EC9B /* StoreKit.framework */,
 				FB29BF4B1CB62DE90032CF0D /* libz.tbd */,
 				FB29BF491CB62DDD0032CF0D /* SystemConfiguration.framework */,
 				FB29BF471CB62DD60032CF0D /* CoreData.framework */,
 				FB4B34431CB5300700204794 /* libsqlite3.0.tbd */,
-				FB4B34411CB52F7200204794 /* libGoogleAnalyticsServices.a */,
 				FB08B5371CAA88AD005466D9 /* AdSupport.framework */,
 				FB08B52C1CAA854B005466D9 /* FacebookSDKStrings.bundle */,
 				FB08B52D1CAA854B005466D9 /* FBAudienceNetwork.framework */,
@@ -434,6 +469,8 @@
 		FB30368B1CA14AE300186849 = {
 			isa = PBXGroup;
 			children = (
+				FB410EE01CCF064600C8EC9B /* StartApp.bundle */,
+				FB410EE11CCF064600C8EC9B /* StartApp.framework */,
 				FB9E9C281CA3C7F30007ACDA /* Reader */,
 				FB3036961CA14AE300186849 /* EffortListen */,
 				FB3036951CA14AE300186849 /* Products */,
@@ -453,6 +490,7 @@
 		FB3036961CA14AE300186849 /* EffortListen */ = {
 			isa = PBXGroup;
 			children = (
+				FB410F241CCF8DE400C8EC9B /* CoreData */,
 				FB9E9D1C1CA3E0E20007ACDA /* Commons */,
 				FB6763F61CA284A600344306 /* Services */,
 				A57718011CA18C5D00102307 /* ViewControllers */,
@@ -512,6 +550,29 @@
 				FB3036C41CA15E7300186849 /* FolderTableViewCell.m */,
 			);
 			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		FB410F241CCF8DE400C8EC9B /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FB410F251CCF8DE400C8EC9B /* BookEntity+CoreDataProperties.h */,
+				FB410F261CCF8DE400C8EC9B /* BookEntity+CoreDataProperties.m */,
+				FB410F271CCF8DE400C8EC9B /* BookEntity.h */,
+				FB410F281CCF8DE400C8EC9B /* BookEntity.m */,
+				FB410F291CCF8DE400C8EC9B /* ContentEntity+CoreDataProperties.h */,
+				FB410F2A1CCF8DE400C8EC9B /* ContentEntity+CoreDataProperties.m */,
+				FB410F2B1CCF8DE400C8EC9B /* ContentEntity.h */,
+				FB410F2C1CCF8DE400C8EC9B /* ContentEntity.m */,
+				FB410F2D1CCF8DE400C8EC9B /* FolderEntity+CoreDataProperties.h */,
+				FB410F2E1CCF8DE400C8EC9B /* FolderEntity+CoreDataProperties.m */,
+				FB410F2F1CCF8DE400C8EC9B /* FolderEntity.h */,
+				FB410F301CCF8DE400C8EC9B /* FolderEntity.m */,
+				FB410F311CCF8DE400C8EC9B /* ItemEntity+CoreDataProperties.h */,
+				FB410F321CCF8DE400C8EC9B /* ItemEntity+CoreDataProperties.m */,
+				FB410F331CCF8DE400C8EC9B /* ItemEntity.h */,
+				FB410F341CCF8DE400C8EC9B /* ItemEntity.m */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		FB4410D91CAA36AE00176306 /* SWRevealViewController */ = {
@@ -810,6 +871,7 @@
 				FB9E9C831CA3C7F30007ACDA /* AppIcon-120.png in Resources */,
 				FB3036A71CA14AE300186849 /* Assets.xcassets in Resources */,
 				FB9E9C991CA3C7F30007ACDA /* Reader-Mark-N@3x.png in Resources */,
+				FB410EE21CCF064600C8EC9B /* StartApp.bundle in Resources */,
 				FB9E9C801CA3C7F30007ACDA /* AppIcon-072.png in Resources */,
 				FB9E9C891CA3C7F30007ACDA /* Default-667h@2x.png in Resources */,
 				FB9E9D141CA3D8E70007ACDA /* brightLight@3x.png in Resources */,
@@ -890,7 +952,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB9E9CAF1CA3C7F30007ACDA /* ReaderThumbCache.m in Sources */,
+				FB410F3B1CCF8DE400C8EC9B /* ItemEntity+CoreDataProperties.m in Sources */,
 				FB9E9CB61CA3C7F30007ACDA /* ReaderViewController.m in Sources */,
+				FB410F391CCF8DE400C8EC9B /* FolderEntity+CoreDataProperties.m in Sources */,
 				FB6763F21CA24EC700344306 /* BookViewController.m in Sources */,
 				FB9E9CB11CA3C7F30007ACDA /* ReaderThumbQueue.m in Sources */,
 				FB3036BF1CA15C6700186849 /* ModelItem.m in Sources */,
@@ -908,10 +972,13 @@
 				FB9E9CB91CA3C7F30007ACDA /* UIXToolbarView.m in Sources */,
 				FB9E9CAE1CA3C7F30007ACDA /* ReaderMainToolbar.m in Sources */,
 				FB9E9CB81CA3C7F30007ACDA /* ThumbsViewController.m in Sources */,
+				FB410F3C1CCF8DE400C8EC9B /* ItemEntity.m in Sources */,
 				FB6763F91CA2868800344306 /* BookService.m in Sources */,
 				FB9E9CA81CA3C7F30007ACDA /* ReaderContentPage.m in Sources */,
 				FB9E9CA71CA3C7F30007ACDA /* ReaderConstants.m in Sources */,
 				FB3036D41CA1677F00186849 /* Common.m in Sources */,
+				FB410F351CCF8DE400C8EC9B /* BookEntity+CoreDataProperties.m in Sources */,
+				FB410F361CCF8DE400C8EC9B /* BookEntity.m in Sources */,
 				A577180A1CA18C5D00102307 /* LoginViewController.m in Sources */,
 				FB93904E1CA90D4000C76B04 /* AdmodManager.m in Sources */,
 				FB9E9CB41CA3C7F30007ACDA /* ReaderThumbsView.m in Sources */,
@@ -919,14 +986,17 @@
 				FB3036A51CA14AE300186849 /* EffortListen.xcdatamodeld in Sources */,
 				FB9E9CB31CA3C7F30007ACDA /* ReaderThumbRequest.m in Sources */,
 				FB3036D01CA1673800186849 /* CustomFooter.m in Sources */,
+				FB410F371CCF8DE400C8EC9B /* ContentEntity+CoreDataProperties.m in Sources */,
 				FB9E9CAC1CA3C7F30007ACDA /* ReaderDocumentOutline.m in Sources */,
 				FB9E9CB71CA3C7F30007ACDA /* ThumbsMainToolbar.m in Sources */,
 				FB6763FC1CA2A61100344306 /* PlaySoundViewController.m in Sources */,
+				FB410F381CCF8DE400C8EC9B /* ContentEntity.m in Sources */,
 				A5850D321CBE36C200299046 /* Configure.m in Sources */,
 				FB3036D11CA1673800186849 /* CustomHeader.m in Sources */,
 				FB3036C51CA15E7300186849 /* FolderTableViewCell.m in Sources */,
 				FB4410EA1CAA3A4F00176306 /* LeftCustomCell.m in Sources */,
 				FB3036CE1CA1673800186849 /* CustomCellBackground.m in Sources */,
+				FB410F3A1CCF8DE400C8EC9B /* FolderEntity.m in Sources */,
 				FB9E9D1B1CA3DEBD0007ACDA /* SuggestService.m in Sources */,
 				FB9E9CA91CA3C7F30007ACDA /* ReaderContentTile.m in Sources */,
 				FB9E9D181CA3DAE10007ACDA /* SuggestViewController.m in Sources */,
@@ -1012,8 +1082,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1058,8 +1128,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1091,8 +1161,8 @@
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1128,8 +1198,8 @@
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

@@ -15,18 +15,18 @@
                         <viewControllerLayoutGuide type="bottom" id="cNP-Yn-cyh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="OTk-gu-y3V">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconDefault.png" translatesAutoresizingMaskIntoConstraints="NO" id="7yi-P7-V7D">
-                                <rect key="frame" x="258" y="81" width="70" height="71"/>
+                                <rect key="frame" x="146" y="81" width="70" height="71"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="71" id="FyX-wW-aHn"/>
                                     <constraint firstAttribute="width" constant="70" id="oVn-rh-XiI"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.5450980392" green="0.76470588240000004" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="7yi-P7-V7D" firstAttribute="centerX" secondItem="OTk-gu-y3V" secondAttribute="centerX" constant="-7" id="IW1-iB-gbQ"/>
                             <constraint firstItem="7yi-P7-V7D" firstAttribute="top" secondItem="OTk-gu-y3V" secondAttribute="topMargin" constant="81" id="IaI-Vs-Mnv"/>
@@ -34,6 +34,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hgE-Fv-HqJ"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <segue destination="97K-gc-fcj" kind="show" identifier="loginSegue" id="QGP-xP-p4Q"/>
                     </connections>
@@ -51,7 +52,7 @@
                         <viewControllerLayoutGuide type="bottom" id="SAI-g8-L9i"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vZU-ps-Zsx">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

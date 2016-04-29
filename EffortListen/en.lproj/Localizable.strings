@@ -5,7 +5,7 @@
   Created by Tamqn on 3/30/16.
   Copyright © 2016 Tamqn. All rights reserved.
 */
-"keyLoggingIn" = "Logging in";
+"keyLoggingIn" = "Loading...";
 "keyFolders" = "Folders";
 "keyLoading" = "Loading";
 "keyServerError" = "Server Error";

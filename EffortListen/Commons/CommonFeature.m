@@ -129,4 +129,26 @@
         return uuidString;
     }
 }
+
++ (BOOL)isNetworkAvailable {
+    CFNetDiagnosticRef dReference;
+    dReference = CFNetDiagnosticCreateWithURL (NULL, (__bridge CFURLRef)[NSURL URLWithString:@"www.apple.com"]);
+    
+    CFNetDiagnosticStatus status;
+    status = CFNetDiagnosticCopyNetworkStatusPassively (dReference, NULL);
+    
+    CFRelease (dReference);
+    
+    if ( status == kCFNetDiagnosticConnectionUp )
+    {
+        NSLog (@"Connection is Available");
+        return YES;
+    }
+    else
+    {
+        NSLog (@"Connection is down");
+        return NO;
+    }
+}
+
 @end

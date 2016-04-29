@@ -5,7 +5,7 @@
   Created by Tamqn on 3/30/16.
   Copyright © 2016 Tamqn. All rights reserved.
 */
-"keyLoggingIn" = "Đăng nhập";
+"keyLoggingIn" = "Tải dữ liệu";
 "keyFolders" = "Danh sách thư mục";
 "keyLoading" = "Loading";
 "keyServerError" = "Lỗi dịch vụ";

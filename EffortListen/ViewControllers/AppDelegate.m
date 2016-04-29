@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "FaceBookServicesManager.h"
+#import <StartApp/StartApp.h>
 
 const NSUInteger kApplicationID = 37770;
 NSString *const kAuthKey        = @"yk27Lrh3MGYkXWG";
@@ -44,6 +45,23 @@ NSString *const kAccountKey     = @"dNmL8ohoACNrhHZ6KWAQ";
     
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:139/255.0 green:195/255.0 blue:74/255.0 alpha:1],NSForegroundColorAttributeName,[UIColor colorWithRed:139/255.0 green:195/255.0 blue:74/255.0 alpha:1],NSForegroundColorAttributeName,
       [NSValue valueWithUIOffset:UIOffsetMake(0, -1)],NSForegroundColorAttributeName,[UIFont fontWithName:@"Arial-Bold" size:20],NSFontAttributeName,nil]];
+    
+    
+    // initialize the SDK with your appID and devID
+    STAStartAppSDK* sdk = [STAStartAppSDK sharedInstance];
+    sdk.appID = @"203121195";
+    sdk.devID = @"102434596";
+    sdk.preferences = [STASDKPreferences prefrencesWithAge:22 andGender:STAGender_Male];
+    
+    STASplashPreferences *splashPreferences = [[STASplashPreferences alloc] init];
+    splashPreferences.splashMode = STASplashModeTemplate;
+    splashPreferences.splashTemplateTheme = STASplashTemplateThemeOcean;
+    splashPreferences.splashLoadingIndicatorType = STASplashLoadingIndicatorTypeDots;
+    splashPreferences.splashTemplateIconImageName = @"Effortless English";
+    splashPreferences.splashTemplateAppName = @"StartApp Effortless English App";
+    
+    [sdk showSplashAdWithPreferences:splashPreferences];
+    
     return YES;
 }
 

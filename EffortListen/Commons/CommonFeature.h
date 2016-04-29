@@ -24,4 +24,5 @@ static NSString *format_date_type_dd_mm_yyyy = @"dd-MM-yyyy";
 + (UIImage *)imageResize :(UIImage*)img andResizeTo:(CGSize)newSize;
 + (UIImage*)imageWithImage:(UIImage*) sourceImage scaledToWidth: (float) i_width;
 + (NSString *)deviceUUID;
++ (BOOL)isNetworkAvailable;
 @end

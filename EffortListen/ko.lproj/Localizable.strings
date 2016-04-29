@@ -6,7 +6,7 @@
   Copyright © 2016 Tamqn. All rights reserved.
 */
 
-"LoggingIn" = "벌채 반출";
+"LoggingIn" = "다운로드...";
 "keyFolders" = "폴더";
 "keyLoading" = "로드";
 "keyServerError" = "서버 오류";

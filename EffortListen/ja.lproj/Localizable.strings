@@ -6,7 +6,7 @@
   Copyright © 2016 Tamqn. All rights reserved.
 */
 
-"keyLoggingIn" = "ロギング";
+"keyLoggingIn" = "ダウンロード...";
 "keyFolders" = "フォルダ";
 "keyLoading" = "ローディング";
 "keyServerError" = "サーバーエラー";
